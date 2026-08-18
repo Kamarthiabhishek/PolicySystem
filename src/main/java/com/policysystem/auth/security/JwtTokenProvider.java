@@ -170,7 +170,7 @@ public class JwtTokenProvider {
      * @throws JwtException if the token cannot be parsed or is invalid
      */
     protected Claims parseToken(String token) {
-        return Jwts.parserBuilder()
+        return Jwts.parser()
                 .setSigningKey(secretKey)
                 .build()
                 .parseClaimsJws(token)
